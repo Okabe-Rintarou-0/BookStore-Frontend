@@ -1,0 +1,27 @@
+.header {
+    background-color: white !important;
+    padding: 0;
+}
+
+.navbar {
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 50px;
+}
+
+svg {
+    vertical-align: baseline;
+}
+
+.footer {
+    text-align: center;
+}
+
+.basic-layout {
+    min-height: 100vh !important;
+}
+
+.basic-layout {
+    min-height: 100vh !important;
+}

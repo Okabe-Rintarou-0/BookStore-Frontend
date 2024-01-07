@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { ConfigProvider, theme } from 'antd';
+import AppRouter from './components/router';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const themeToken = {
+    colorPrimary: "#1DA57A",
+    colorInfo: "#1DA57A"
+  }
+  return <ConfigProvider theme={{
+    algorithm: theme.defaultAlgorithm,
+    token: themeToken
+  }} >
+    <AppRouter />
+  </ConfigProvider>
 }
 
 export default App;
