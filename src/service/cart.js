@@ -35,3 +35,15 @@ export async function addCartItem(bookId) {
     }
     return response;
 }
+
+export async function changeCartItemNumber(id, number) {
+    const url = `${PREFIX}/cart/${id}?number=${number}`;
+    let response;
+    try {
+        response = await put(url);
+    } catch (e) {
+        console.log(e);
+        response = DUMMY_RESPONSE;
+    }
+    return response;
+}

@@ -15,7 +15,8 @@ export default function NavBar({ user }) {
     const selectedKey = '/' + parts[parts.length - 1];
     const navItems = [
         { label: "首页", value: "/" },
-        { label: "购物车", value: "/cart" }
+        { label: "购物车", value: "/cart" },
+        { label: "订单", value: "/order" }
     ];
     const navMenuItems = navItems.map(item => ({
         key: item.value,

@@ -23,7 +23,13 @@ export default function BookInfoCard({ book }) {
                 <Typography>
                     <Title>{book.title}</Title>
                     <Divider orientation="left">基本信息</Divider>
-                    <Paragraph>{`作者：${book.author}`}</Paragraph>
+                    <Space>
+                        <Paragraph>
+                            {`作者：${book.author}`}
+                            <Divider type="vertical" />
+                            {`销量：${book.sales}`}
+                        </Paragraph>
+                    </Space>
                     <Divider orientation="left">作品简介</Divider>
                     <Paragraph>
                         {book.description}
