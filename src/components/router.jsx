@@ -4,6 +4,7 @@ import LoginPage from "../page/login";
 import BookPage from "../page/book";
 import { CartPage } from "../page/cart";
 import { OrderPage } from "../page/order";
+import RankPage from "../page/rank";
 
 export default function AppRouter() {
     return <BrowserRouter>
@@ -13,6 +14,7 @@ export default function AppRouter() {
             <Route path="/book/:id" element={<BookPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/order" element={<OrderPage />} />
+            <Route path="/rank" element={<RankPage />} />
             <Route path="/*" element={<HomePage />} />
         </Routes>
     </BrowserRouter>

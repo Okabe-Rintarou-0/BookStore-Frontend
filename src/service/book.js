@@ -26,3 +26,15 @@ export async function getBookById(id) {
     }
     return book;
 }
+
+export async function getTop10BestSellingBooks() {
+    const url = `${PREFIX}/books/rank`;
+    let books;
+    try {
+        books = await getJson(url);
+    } catch (e) {
+        console.log(e);
+        books = null;
+    }
+    return books;
+}
