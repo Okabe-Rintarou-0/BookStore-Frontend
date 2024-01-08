@@ -3,9 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
     LogoutOutlined,
     UserOutlined,
+    AccountBookOutlined
 } from '@ant-design/icons';
 import { logout } from "../service/logout";
 import useMessage from "antd/es/message/useMessage";
+import { handleBaseApiResponse } from "../utils/message";
 export default function NavBar({ user }) {
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,23 +25,25 @@ export default function NavBar({ user }) {
 
     const handleMenuClick = async (e) => {
         if (e.key === "/logout") {
-            let succeed = await logout();
-            if (succeed) {
-                await messageApi.success("登出成功！", 0.4);
-                navigate("/login");
-            } else {
-                await messageApi.error("登出失败！请稍后再试！", 0.4);
-            }
+            let res = await logout();
+            handleBaseApiResponse(res, messageApi, () => navigate("/login"));
             return;
         }
-        navigate(e.key);
+        if (e.key.startsWith("/")) {
+            navigate(e.key);
+        }
     };
 
     const dropMenuItems = [
         {
-            key: "account",
+            key: "nickname",
             label: user?.nickname,
             icon: <UserOutlined />,
+        },
+        {
+            key: "balance",
+            label: `余额：${user?.balance / 100}元`,
+            icon: <AccountBookOutlined />,
         },
         { key: "/logout", label: "登出", icon: <LogoutOutlined />, danger: true },
     ];

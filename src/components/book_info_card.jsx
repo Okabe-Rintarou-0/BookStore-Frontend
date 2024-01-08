@@ -1,10 +1,20 @@
 import { Button, Card, Col, Image, Row, Space } from "antd";
 import { Divider, Typography } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons'
+import { addCartItem } from "../service/cart";
+import { handleBaseApiResponse } from "../utils/message";
+import useMessage from "antd/es/message/useMessage";
 const { Title, Paragraph } = Typography;
 
 export default function BookInfoCard({ book }) {
+    const [messageApi, contextHolder] = useMessage();
+    const handleAddCartItem = async () => {
+        let res = await addCartItem(book.id);
+        handleBaseApiResponse(res, messageApi);
+    };
+
     return <Card>
+        {contextHolder}
         <Row>
             <Col span={9}>
                 <Image src={book.cover} height={500} />
@@ -44,7 +54,7 @@ export default function BookInfoCard({ book }) {
                             </Space>
                         </div>
                         <Space>
-                            <Button size="large">加入购物车</Button>
+                            <Button size="large" onClick={handleAddCartItem}>加入购物车</Button>
                             <Button type="primary" size="large">立即购买</Button>
                         </Space>
                     </Space>

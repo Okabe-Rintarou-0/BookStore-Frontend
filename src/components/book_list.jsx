@@ -1,4 +1,4 @@
-import { List, Avatar } from "antd"
+import { List } from "antd"
 import BookCard from "./book_card"
 
 export default function BookList({ books, pageSize, total }) {

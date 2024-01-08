@@ -6,7 +6,6 @@ import { useSearchParams } from "react-router-dom";
 import { searchBooks } from "../service/book";
 
 import { Input } from 'antd';
-import BookInfoCard from "../components/book_info_card";
 const { Search } = Input;
 
 export default function HomePage() {

@@ -9,6 +9,7 @@ import useMessage from "antd/es/message/useMessage";
 import { Link, useNavigate } from "react-router-dom";
 import { BasicLayout } from "../components/layout";
 import { login } from "../service/login";
+import { handleBaseApiResponse } from "../utils/message";
 
 const LoginPage = () => {
     const [messageApi, contextHolder] = useMessage();
@@ -19,13 +20,7 @@ const LoginPage = () => {
         let password = values['password'];
 
         let res = await login(email, password);
-        if (res.ok) {
-            messageApi.success(res.message, 0.5).then(()=>{
-                navigate("/");
-            });
-        } else {
-            messageApi.error(res.message);
-        }
+        handleBaseApiResponse(res, messageApi, () => navigate("/"));
     };
 
     return (
@@ -77,6 +72,7 @@ const LoginPage = () => {
                         style={{
                             float: 'right',
                         }}
+                        href="#/"
                     >
                         忘记密码
                     </a>

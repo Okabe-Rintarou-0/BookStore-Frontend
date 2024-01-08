@@ -1,12 +1,23 @@
 export async function getJson(url) {
-    let res = await fetch(url, {method: "GET", credentials: "include"});
+    let res = await fetch(url, { method: "GET", credentials: "include" });
     return res.json();
 }
 
 export async function get(url) {
-    let res = await fetch(url, {method: "GET", credentials: "include"});
+    let res = await fetch(url, { method: "GET", credentials: "include" });
     return res;
 }
+
+export async function put(url, data) {
+    let res = await fetch(url, { method: "PUT", credentials: "include", body: JSON.stringify(data) });
+    return res.json();
+}
+
+export async function del(url, data) {
+    let res = await fetch(url, { method: "DELETE", credentials: "include", body: JSON.stringify(data) });
+    return res.json();
+}
+
 
 export async function postJson(url, data) {
     let opts = {
@@ -19,7 +30,11 @@ export async function postJson(url, data) {
     };
     let res = await fetch(url, opts);
     return res.json();
-} 
+}
 
 export const PREFIX = "http://localhost:8080/api";
 export const IMAGE_PREFIX = "http://localhost:8080/images";
+export const DUMMY_RESPONSE = {
+    ok: false,
+    message: "网络错误！"
+}
