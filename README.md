@@ -20,6 +20,7 @@ yarn install && yarn start
 ## 学习指南
 本课程主要学习 `React` 框架，学有余力的同学也可以尝试一下 `Vue`。
 
+### 函数式组件
 React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组件。由于便利性，现在大家倾向于使用后者进行开发。函数式组件最令人头疼的就是各种 hooks（钩子函数）。所以学会各种 hooks 的用法是学好 React 的关键。
 
 + [useState](https://legacy.reactjs.org/docs/hooks-state.html): 
@@ -102,11 +103,16 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     const {id} = useParams(); 
     ```
 
+### 异步函数
 异步函数也是一大重点，建议大家学习好两种方式：**回调函数** 和 **await** 方式，本项目均采用后者，避免过多回调函数产生不美观和“回调地狱”。
 可以参考：
-+ https://www.infoworld.com/article/3322904/asynchronous-javascript-callbacks-and-promises-explained.html
 + https://juejin.cn/post/7108187709076111367
-    
+
+### 养成良好的习惯
++ 对于列表组件，每一项都需要 `key` 属性：https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html 。`key` 属性很重要，React 利用 key 来识别组件，它是一种身份标识标识，就像我们的身份证用来辨识一个人一样。每个 key 对应一个组件，相同的 key 会被认为是同一个组件，这样后续相同的 key 对应组件都不会被重新创建。
++ 善用浏览器开发者工具：控制台、网络...
++ 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
+
 ## 进阶
 + 使用 Typescript 代替 Javascript。
 + 使用 [useSWR](https://swr.vercel.app/zh-CN) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；

@@ -4,6 +4,7 @@ import useMessage from "antd/es/message/useMessage";
 import { handleBaseApiResponse } from "../utils/message";
 import { useEffect, useState } from "react";
 import PlaceOrderModal from "./place_order_modal";
+import { Link } from "react-router-dom";
 
 export default function CartItemTable({ cartItems, onMutate }) {
     const [messageApi, contextHolder] = useMessage();
@@ -49,7 +50,7 @@ export default function CartItemTable({ cartItems, onMutate }) {
     const columns = [
         {
             title: '书名', dataIndex: 'book', key: 'book_title',
-            render: book => book.title,
+            render: book => (<Link to={`/book/${book.id}`}>{book.title}</Link>),
         },
         {
             title: '数量', dataIndex: 'number', key: 'number',

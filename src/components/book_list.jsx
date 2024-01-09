@@ -3,7 +3,7 @@ import BookCard from "./book_card"
 import { useEffect, useState } from "react";
 
 export default function BookList({ books, pageSize, current, total, onPageChange }) {
-    return <Space direction="vertical" align="center">
+    return <Space direction="vertical" align="center" style={{ width: "100%" }}>
         <List
             grid={{
                 gutter: 16, column: 5
