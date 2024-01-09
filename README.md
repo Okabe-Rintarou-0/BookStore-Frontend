@@ -181,6 +181,16 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
         name: "object"
     };
     ```
+    顺带一提，如果变量和对象的 key 名字相同，则可以简化赋值表达：
+    ```javascript
+    let book = {
+        title: "chiikawa"
+    };
+    let title = "chiikawa2";
+    book = {
+        title
+    };
+    ```
 
 ## 进阶
 + 使用 Typescript 代替 Javascript。
