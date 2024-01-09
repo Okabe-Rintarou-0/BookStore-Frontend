@@ -113,6 +113,75 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 + 善用浏览器开发者工具：控制台、网络...
 + 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
 
+## Tricks
++ 字符串格式化：
+
+    ```javascript
+    const num = 123;
+    const str = `number is ${num}`;
+    ```
+
+    这将产生字符串"number is 123"。
+
++ 简洁的条件渲染
+    
+    ```javascript
+    {shouldShow && <SomeComponent/>}
+    ```
+    `shouldShow` 是一个 bool 类型的变量，当且仅当其为真，渲染后面的组件。这种写法最为简洁，也不失可读性。
+
++ 便捷的函数式编程：
+    
+    基本上函数式都会支持 `map`、`filter` 和 `reduce` 操作。下面的代码将产生一系列组件。
+    ```javascript
+    function ArrayComponents({ array }) {
+        return array.map(item => <div>{item}</div>);
+    }    
+    <ArrayComponents array={[1, 2, 3]}/>
+    ```
+
+    这三种函数非常常用，尤其是 `map`，请熟练掌握其用法，增加编程效率。
+
++ 箭头函数
+
+    基本上可以完美代替 `function`，编码方便。注意返回类型如果是如下形式请加括号：
+
+    ```javascript
+    let func = book => ({
+        id: book.id,
+        title: book.title
+    });
+    ```
+
+    正如上述例子所示，只有一个参数的情况下参数可以不加括号。
+
++ Javascript 中的 `...` 运算符：
+
+    作用在数组上就是将数组解开：
+
+    ```javascript
+    let array = [1, 2, 3];
+    let newArray = [..array, 4]; // [1, 2, 3, 4]
+    ```
+
+    作用在对象上：
+    ```javascript
+    let obj = {
+        id: "1"
+    };
+    let newObj = {
+        ...obj,
+        name: "object"
+    };
+    ```
+    等价于：
+    ```javascript
+    let newObj = {
+        id: "1",
+        name: "object"
+    };
+    ```
+
 ## 进阶
 + 使用 Typescript 代替 Javascript。
 + 使用 [useSWR](https://swr.vercel.app/zh-CN) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；
