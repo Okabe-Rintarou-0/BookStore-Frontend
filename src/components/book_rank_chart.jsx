@@ -22,7 +22,7 @@ export default function BookRankChart({ books }) {
             },
         },
         meta: {
-            type: {
+            title: {
                 alias: '书名',
             },
             sales: {

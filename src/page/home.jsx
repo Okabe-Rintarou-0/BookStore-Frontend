@@ -15,7 +15,7 @@ export default function HomePage() {
     const [searchParams, setSearchParams] = useSearchParams();
     const keyword = searchParams.get("keyword") || "";
     const pageIndex = searchParams.get("pageIndex") != null ? Number.parseInt(searchParams.get("pageIndex")) : 0;
-    const pageSize = searchParams.get("pageSize") != null ? Number.parseInt(searchParams.get("pageSize")) : 20;
+    const pageSize = searchParams.get("pageSize") != null ? Number.parseInt(searchParams.get("pageSize")) : 10;
 
     const getBooks = async () => {
         let pagedBooks = await searchBooks(keyword, pageIndex, pageSize);
@@ -27,21 +27,25 @@ export default function HomePage() {
 
     useEffect(() => {
         getBooks();
-    }, [keyword])
+    }, [keyword, pageIndex, pageSize])
 
     const handleSearch = (keyword) => {
         setSearchParams({
             "keyword": keyword,
             "pageIndex": 0,
-            "pageSize": 20
+            "pageSize": 10
         });
     };
+
+    const handlePageChange = (page) => {
+        setSearchParams({ ...searchParams, pageIndex: page - 1 });
+    }
 
     return <PrivateLayout>
         <Card style={{ margin: "20px" }}>
             <Space direction="vertical" size="large" style={{ width: "100%" }}>
                 <Search placeholder="输入关键字" onSearch={handleSearch} enterButton size="large" />
-                <BookList books={books} pageSize={pageSize} total={totalPage} />
+                <BookList books={books} pageSize={pageSize} total={totalPage * pageSize} current={pageIndex + 1} onPageChange={handlePageChange} />
             </Space>
         </Card>
     </PrivateLayout>
