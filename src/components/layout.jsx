@@ -44,7 +44,7 @@ export function PrivateLayout({ children }) {
         <Layout className="basic-layout">
             <Header className="header"><NavBar user={user} /></Header>
             <Content>
-                <UserContext.Provider value={user}>{children}</UserContext.Provider>
+                <UserContext.Provider value={user}>{user && children}</UserContext.Provider>
             </Content>
             <Footer className="footer">
                 <Space direction="vertical">
