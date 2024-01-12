@@ -25,6 +25,8 @@ yarn install && yarn start
 ## 学习指南
 本课程主要学习 `React` 框架，学有余力的同学也可以尝试一下 `Vue`。
 
+如果你想参与问题、技术讨论，欢迎使用本 repo 的讨论模块：https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions 。
+
 ### 函数式组件
 React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组件。由于便利性，现在大家倾向于使用后者进行开发。函数式组件最令人头疼的就是各种 hooks（钩子函数）。所以学会各种 hooks 的用法是学好 React 的关键。
 
