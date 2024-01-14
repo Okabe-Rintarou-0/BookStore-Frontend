@@ -366,51 +366,6 @@
                     }
                 }
             },
-            "Book": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "title": {
-                        "type": "string"
-                    },
-                    "author": {
-                        "type": "string"
-                    },
-                    "description": {
-                        "type": "string"
-                    },
-                    "price": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "cover": {
-                        "type": "string"
-                    },
-                    "sales": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
-                }
-            },
-            "CartItem": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "format": "int64"
-                    },
-                    "book": {
-                        "$ref": "#/components/schemas/Book"
-                    },
-                    "number": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
-                }
-            },
             "OrderInfo": {
                 "type": "object",
                 "properties": {
@@ -428,12 +383,6 @@
                         "items": {
                             "type": "integer",
                             "format": "int64"
-                        }
-                    },
-                    "items": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/CartItem"
                         }
                     }
                 }
@@ -462,6 +411,35 @@
                     "balance": {
                         "type": "integer",
                         "format": "int64"
+                    }
+                }
+            },
+            "Book": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "cover": {
+                        "type": "string"
+                    },
+                    "sales": {
+                        "type": "integer",
+                        "format": "int32"
                     }
                 }
             },
@@ -494,6 +472,22 @@
                 }
             },
             "OrderItem": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "book": {
+                        "$ref": "#/components/schemas/Book"
+                    },
+                    "number": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "CartItem": {
                 "type": "object",
                 "properties": {
                     "id": {
