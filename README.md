@@ -9,6 +9,13 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
     <img src="images/home.png" style="width: 48%; margin-right: 2%;">
 </div>
 
+<p align="center">
+  <img align="center" src="https://img.shields.io/badge/node-21.x-blue">
+  <img align="center" src="https://img.shields.io/github/issues/Okabe-Rintarou-0/BookStore-Frontend" /> 
+  <img align="center" src="https://img.shields.io/github/contributors/Okabe-Rintarou-0/BookStore-Frontend" />
+  <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
+</p>
+
 ## 环境配置
 
 请下载最新版本的 node(21.x)。如果你学过 python 的话，你应该清楚 pip 是一个功能强大的包管理器。与其类似，你可以选择 `npm` 或者 `yarn` 作为 node 的包管理器。
