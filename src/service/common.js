@@ -32,8 +32,9 @@ export async function postJson(url, data) {
     return res.json();
 }
 
-export const PREFIX = "http://localhost:8080/api";
-export const IMAGE_PREFIX = "http://localhost:8080/images";
+export const BASEURL = process.env.REACT_APP_BASE_URL;
+export const PREFIX = `${BASEURL}/api`;
+export const IMAGE_PREFIX = `${BASEURL}/images`;
 export const DUMMY_RESPONSE = {
     ok: false,
     message: "网络错误！"
