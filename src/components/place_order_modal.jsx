@@ -1,11 +1,10 @@
-import { Button, Form, Input, Modal, Typography } from "antd";
+import { Button, Form, Input, Modal } from "antd";
 import React from "react";
 import useMessage from "antd/es/message/useMessage";
 import { placeOrder } from "../service/order";
 import { handleBaseApiResponse } from "../utils/message";
 
 const { TextArea } = Input;
-const { Text } = Typography;
 export default function PlaceOrderModal({
     selectedItems,
     onOk,

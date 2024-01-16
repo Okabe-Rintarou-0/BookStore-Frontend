@@ -4,7 +4,7 @@ import { PrivateLayout } from "../components/layout";
 import OrderTable from "../components/order_table";
 import { getOrders } from "../service/order";
 
-export function OrderPage() {
+export default function OrderPage() {
     const [orders, setOrders] = useState([]);
 
     const initOrders = async () => {

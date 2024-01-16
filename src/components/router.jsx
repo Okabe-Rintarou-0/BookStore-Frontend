@@ -2,8 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../page/home";
 import LoginPage from "../page/login";
 import BookPage from "../page/book";
-import { CartPage } from "../page/cart";
-import { OrderPage } from "../page/order";
+import CartPage from "../page/cart";
+import OrderPage from "../page/order";
 import RankPage from "../page/rank";
 import ApiPage from "../page/api";
 

@@ -1,6 +1,5 @@
 import { List, Pagination, Space } from "antd"
 import BookCard from "./book_card"
-import { useEffect, useState } from "react";
 
 export default function BookList({ books, pageSize, current, total, onPageChange }) {
     return <Space direction="vertical" align="center" style={{ width: "100%" }}>

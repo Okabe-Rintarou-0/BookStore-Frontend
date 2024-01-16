@@ -4,7 +4,7 @@ import { Card } from "antd";
 import CartItemTable from "../components/cart_item_table";
 import { PrivateLayout } from "../components/layout";
 
-export function CartPage() {
+export default function CartPage() {
     const [cartItems, setCartItems] = useState([]);
 
     const initCartItems = async () => {
