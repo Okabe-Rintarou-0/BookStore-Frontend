@@ -21,13 +21,18 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 
 请下载最新版本的 node(21.x)。如果你学过 python 的话，你应该清楚 pip 是一个功能强大的包管理器。与其类似，你可以选择 `npm` 或者 `yarn` 作为 node 的包管理器。
 
-通过以下命令，你可以轻松启动前端项目：
-```shell
+通过以下命令，你可以轻松启动前端项目（推荐）：
+```bash
 # 使用 npm
 npm install && npm start
 
 # 使用 yarn
 yarn install && yarn start
+```
+
+或者，使用 `Docker` 一键部署（仅测试用）：
+```bash
+docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name bookstore-frontend 923048992/frontend
 ```
 
 ## 后端 API
