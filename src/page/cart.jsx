@@ -17,7 +17,7 @@ export default function CartPage() {
     }, []);
 
     return <PrivateLayout>
-        <Card>
+        <Card className="card-container">
             <CartItemTable cartItems={cartItems} onMutate={initCartItems} />
         </Card>
     </PrivateLayout>

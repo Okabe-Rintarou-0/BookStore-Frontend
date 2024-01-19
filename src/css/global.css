@@ -25,3 +25,7 @@ svg {
 .basic-layout {
     min-height: 100vh !important;
 }
+
+.card-container {
+    margin: 20px;
+}

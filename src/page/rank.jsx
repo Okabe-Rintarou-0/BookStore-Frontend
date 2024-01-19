@@ -17,7 +17,7 @@ export default function RankPage() {
     }, []);
 
     return <PrivateLayout>
-        <Card>
+        <Card className="card-container">
             <BookRankChart books={books} />
         </Card>
     </PrivateLayout>

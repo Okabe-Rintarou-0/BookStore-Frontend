@@ -42,7 +42,7 @@ export default function HomePage() {
     }
 
     return <PrivateLayout>
-        <Card style={{ margin: "20px" }}>
+        <Card className="card-container">
             <Space direction="vertical" size="large" style={{ width: "100%" }}>
                 <Search placeholder="输入关键字" onSearch={handleSearch} enterButton size="large" />
                 <BookList books={books} pageSize={pageSize} total={totalPage * pageSize} current={pageIndex + 1} onPageChange={handlePageChange} />

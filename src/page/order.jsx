@@ -17,7 +17,7 @@ export default function OrderPage() {
     }, []);
 
     return <PrivateLayout>
-        <Card>
+        <Card className="card-container">
             <OrderTable orders={orders} />
         </Card>
     </PrivateLayout>
