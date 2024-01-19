@@ -1,8 +1,8 @@
 import ApiDocs from "../components/api_docs";
-import { PrivateLayout } from "../components/layout";
+import { BasicLayout } from "../components/layout";
 
 export default function ApiPage() {
-    return <PrivateLayout>
+    return <BasicLayout>
         <ApiDocs />
-    </PrivateLayout>
+    </BasicLayout>
 }

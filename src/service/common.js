@@ -34,6 +34,7 @@ export async function postJson(url, data) {
 
 export const BASEURL = process.env.REACT_APP_BASE_URL;
 export const PREFIX = `${BASEURL}/api`;
+export const API_DOCS_URL = `${BASEURL}/api-docs`;
 export const IMAGE_PREFIX = `${BASEURL}/images`;
 export const DUMMY_RESPONSE = {
     ok: false,
