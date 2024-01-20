@@ -214,8 +214,38 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
         console.log("HELLO WORLD!");
     };
     handleFunc?.(); // 无报错且函数被执行，输出 HELLO WORLD!
+
+    // 支持链式
+    let someAttr = obj?.nested?.attr;
     ```
+
++ Javascript 中的 `??` 运算符
+
+    作用：
+    + 当左侧的操作数为 `null` 或 `undefined` 时，返回右侧的操作数。
+    + 否则，返回左侧的操作数。
     
+    请明确其与 `&&` 效果的差异：
+    + 当左侧和右侧的操作数都为真时，返回右侧的操作数。
+    + 否则，返回左侧的操作数。
+
+    ```javascript
+    let NULL = null;
+    let UNDEFINED = undefined;
+    let STRING = "Hello World!";
+    let STRING2 = "I Like React!";
+
+    console.log(NULL ?? STRING);      // 输出 Hello World!
+    console.log(UNDEFINED ?? STRING); // 输出 Hello World!
+    console.log(STRING ?? STRING2);   // 输出 Hello World!
+    console.log(STRING2 ?? STRING);   // 输出 I Like React!
+
+    
+    console.log(NULL && STRING);      // 输出 null
+    console.log(UNDEFINED && STRING); // 输出 undefined
+    console.log(STRING && STRING2);   // 输出 I Like React!
+    console.log(STRING2 && STRING);   // 输出 Hello World!
+    ```
 
 + Javascript 中的 `...` 运算符
 
