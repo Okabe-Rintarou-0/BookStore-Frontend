@@ -155,6 +155,18 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     {shouldShow && <SomeComponent/>}
     ```
     `shouldShow` 是一个 bool 类型的变量，当且仅当其为真，渲染后面的组件。这种写法最为简洁，也不失可读性。
++ bool 类型的组件属性可以简写
+    ```javascript
+    // case 1
+    <Modal open />
+    // equals to
+    <Modal open={true} />
+
+    // case 2
+    <Modal />
+    // equals to
+    <Modal open={false} />
+    ```
 
 + 便捷的函数式编程：
     
