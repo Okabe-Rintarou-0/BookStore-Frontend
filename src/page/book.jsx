@@ -30,7 +30,7 @@ export default function BookPage() {
     }, [id]);
 
     useEffect(() => {
-        handleMutate();
+        getComments();
     }, [pageIndex, pageSize, sort])
 
     const handleMutate = () => {
@@ -38,7 +38,6 @@ export default function BookPage() {
     };
 
     const handlePageChange = (page) => {
-        console.log(page);
         setSearchParams({
             pageIndex: page - 1,
             pageSize,
