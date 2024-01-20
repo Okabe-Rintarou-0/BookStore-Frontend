@@ -140,7 +140,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 + 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
 
 ## Tricks
-+ 字符串格式化：
++ 字符串格式化
 
     ```javascript
     const num = 123;
@@ -155,6 +155,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     {shouldShow && <SomeComponent/>}
     ```
     `shouldShow` 是一个 bool 类型的变量，当且仅当其为真，渲染后面的组件。这种写法最为简洁，也不失可读性。
+
 + bool 类型的组件属性可以简写
     ```javascript
     // case 1
@@ -168,7 +169,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     <Modal open={false} />
     ```
 
-+ 便捷的函数式编程：
++ 便捷的函数式编程
     
     基本上函数式都会支持 `map`、`filter` 和 `reduce` 操作。下面的代码将产生一系列组件。
     ```javascript
@@ -192,8 +193,31 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     ```
 
     正如上述例子所示，只有一个参数的情况下参数可以不加括号。
++ Javascript 中的 `?` 运算符
 
-+ Javascript 中的 `...` 运算符：
+    ```javascript
+    const func = (obj) => {
+        console.log(obj?.id);
+    };
+
+    func({id: 1});   // 输出 1
+    func(null);      // 输出 undefined
+    func([]);        // 输出 undefined
+    func(undefined); // 输出 undefined
+
+    // 调用函数
+    let handleFunc = null;
+    handleFunc();    // 报错：Uncaught TypeError: handleFunc is not a function
+    handleFunc?.();  // 无报错且无任何效果
+
+    handleFunc = () => {
+        console.log("HELLO WORLD!");
+    };
+    handleFunc?.(); // 无报错且函数被执行，输出 HELLO WORLD!
+    ```
+    
+
++ Javascript 中的 `...` 运算符
 
     作用在数组上就是将数组解开：
 
@@ -230,7 +254,12 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     };
     ```
 
+## 一些示例
+
++ [获取输入组件的值](https://codesandbox.io/p/sandbox/example-1-monitor-input-value-w873x6?file=%2Fsrc%2FApp.js%3A18%2C33-18%2C51&layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522clrm0e9ba00063b6h0q1lliiq%2522%252C%2522sizes%2522%253A%255B70%252C30%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522clrm0e9ba00023b6ho0ketd30%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522clrm0e9ba00033b6hr27k25ch%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522clrm0e9ba00053b6hprp99i9d%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522clrm0e9ba00023b6ho0ketd30%2522%253A%257B%2522id%2522%253A%2522clrm0e9ba00023b6ho0ketd30%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clrm0l2z100023b6hqvhrjogm%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A18%252C%2522startColumn%2522%253A33%252C%2522endLineNumber%2522%253A18%252C%2522endColumn%2522%253A51%257D%255D%252C%2522filepath%2522%253A%2522%252Fsrc%252FApp.js%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522activeTabId%2522%253A%2522clrm0l2z100023b6hqvhrjogm%2522%257D%252C%2522clrm0e9ba00053b6hprp99i9d%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clrm0e9ba00043b6hzuivh352%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522path%2522%253A%2522%252F%2522%257D%255D%252C%2522id%2522%253A%2522clrm0e9ba00053b6hprp99i9d%2522%252C%2522activeTabId%2522%253A%2522clrm0e9ba00043b6hzuivh352%2522%257D%252C%2522clrm0e9ba00033b6hr27k25ch%2522%253A%257B%2522tabs%2522%253A%255B%255D%252C%2522id%2522%253A%2522clrm0e9ba00033b6hr27k25ch%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Atrue%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D)
+
 ## 进阶
+
 + 使用 Typescript 代替 Javascript。
 + 使用 [useSWR](https://swr.vercel.app/zh-CN) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；
 + 使用 [React.createContext](https://zh-hans.react.dev/reference/react/createContext) 更方便地传递上下文。
