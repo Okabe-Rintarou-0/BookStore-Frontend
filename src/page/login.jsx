@@ -27,7 +27,7 @@ const LoginPage = () => {
         <BasicLayout>
             {contextHolder}
             <LoginFormPage
-                backgroundImageUrl="https://gw.alipayobjects.com/zos/rmsportal/FfdJeJRQWjEeGTpqgBKj.png"
+                backgroundImageUrl={process.env.PUBLIC_URL + 'login.png'}
                 logo={process.env.PUBLIC_URL + '/logo.webp'}
                 title="Book Store"
                 subTitle="电子书城"

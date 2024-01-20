@@ -1,11 +1,11 @@
-import { PREFIX, postJson } from "./common";
+import { PREFIX, post } from "./common";
 
 export async function login(username, password) {
     const url = `${PREFIX}/login`;
     let result;
 
     try {
-        result = await postJson(url, { username, password });
+        result = await post(url, { username, password });
     } catch (e) {
         console.log(e);
         result = {

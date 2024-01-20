@@ -19,7 +19,7 @@ export async function del(url, data) {
 }
 
 
-export async function postJson(url, data) {
+export async function post(url, data) {
     let opts = {
         method: "POST",
         body: JSON.stringify(data),

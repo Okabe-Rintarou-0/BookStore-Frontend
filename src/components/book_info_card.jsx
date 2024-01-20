@@ -1,71 +1,53 @@
-import { Button, Card, Col, Image, Row, Space } from "antd";
-import { Divider, Typography } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons'
+
+import { Card, Divider, Pagination, Space, Tabs } from "antd";
 import { addCartItem } from "../service/cart";
 import { handleBaseApiResponse } from "../utils/message";
 import useMessage from "antd/es/message/useMessage";
-const { Title, Paragraph } = Typography;
+import BookDetails from "./book_details";
+import BookCommentList from "./book_comment_list";
+import CommentInput from "./comment_input";
+import { addBookComment } from "../service/book";
 
-export default function BookInfoCard({ book }) {
+export default function BookInfoCard({
+    pageIndex, sort, book, comments, onMutate, onPageChange, onSortChange
+}) {
     const [messageApi, contextHolder] = useMessage();
     const handleAddCartItem = async () => {
         let res = await addCartItem(book.id);
         handleBaseApiResponse(res, messageApi);
     };
 
-    return <Card>
+    const handleAddComment = async (comment) => {
+        let res = await addBookComment(book.id, comment);
+        handleBaseApiResponse(res, messageApi, onMutate);
+    };
+
+    const tabItems = [{
+        'key': 'createdTime',
+        'label': '最新评论'
+    }, {
+        'key': 'like',
+        'label': '最热评论'
+    }];
+
+    return <Card className="card-container">
         {contextHolder}
-        <Row>
-            <Col span={9}>
-                <Image src={book.cover} height={500} />
-            </Col>
-            <Col span={15}>
-                <Typography>
-                    <Title>{book.title}</Title>
-                    <Divider orientation="left">基本信息</Divider>
-                    <Space>
-                        <Paragraph>
-                            {`作者：${book.author}`}
-                            <Divider type="vertical" />
-                            {`销量：${book.sales}`}
-                        </Paragraph>
-                    </Space>
-                    <Divider orientation="left">作品简介</Divider>
-                    <Paragraph>
-                        {book.description}
-                    </Paragraph>
-                    <Space direction="vertical" size="large" style={{ width: "100%" }}>
-                        <div style={{ backgroundColor: "#fcfaf7", padding: "20px", width: "100%" }}>
-                            <Paragraph style={{ marginBottom: 0 }} type="secondary">抢购价</Paragraph>
-                            <div><Space>
-                                <div style={{ color: "#dd3735", fontSize: "16px" }}>¥</div>
-                                <div style={{ color: "#dd3735", fontSize: "30px" }}>{book.price / 100}</div>
-                                <div style={{ color: "#dd3735", fontSize: "18px" }}>（7折）</div>
-                            </Space>
-                            </div>
-                            <div>
-                                <Space>
-                                    <div style={{
-                                        backgroundColor: "#f48484",
-                                        padding: "0px 4px 0px 4px",
-                                        borderRadius: "5px",
-                                        color: "white"
-                                    }}>店铺促销</div>
-                                    <Paragraph style={{ marginBottom: 0 }} type="secondary">满¥18减¥1，满¥48减¥3，满¥98减¥5，满¥198减¥10</Paragraph>
-                                </Space>
-                            </div>
-                            <Space>
-                                <ExclamationCircleOutlined />
-                                <Paragraph style={{ marginBottom: 0 }} type="secondary">部分促销不可共享，请以购物车能享受的促销为准</Paragraph>
-                            </Space>
-                        </div>
-                        <Space>
-                            <Button size="large" onClick={handleAddCartItem}>加入购物车</Button>
-                            <Button type="primary" size="large">立即购买</Button>
-                        </Space>
-                    </Space>
-                </Typography>
-            </Col>
-        </Row>
+        <Space direction="vertical">
+            <BookDetails book={book} onAddCartItem={handleAddCartItem} />
+            <div style={{ margin: 20 }}>
+                <Divider>书籍评论</Divider>
+                <Tabs items={tabItems}
+                    defaultActiveKey={sort}
+                    onChange={sort => { onSortChange(sort) }}
+                />
+                <CommentInput placeholder="发布一条友善的评论" onSubmit={handleAddComment} />
+                <BookCommentList comments={comments.items} onMutate={onMutate} />
+            </div>
+            <Pagination
+                current={pageIndex + 1}
+                pageSize={5}
+                total={5 * comments.total}
+                onChange={onPageChange} />
+        </Space>
     </Card>
 }
