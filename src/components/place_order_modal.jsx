@@ -13,7 +13,6 @@ export default function PlaceOrderModal({
     const [messageApi, contextHolder] = useMessage();
 
     const handleSubmit = async ({ address, receiver, tel }) => {
-        console.log(address, receiver, tel);
         if (!address || !receiver || !tel) {
             messageApi.error("请填写完整信息！");
             return;
