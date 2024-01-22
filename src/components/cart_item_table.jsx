@@ -14,6 +14,9 @@ export default function CartItemTable({ cartItems, onMutate }) {
     const handleDeleteItem = async (id) => {
         let res = await deleteCartItem(id);
         handleBaseApiResponse(res, messageApi, onMutate);
+        if (res.ok) {
+            setSelectedItems(selectedItems.filter(item => item.id !== id));
+        }
     }
 
     useEffect(() => {
@@ -38,9 +41,9 @@ export default function CartItemTable({ cartItems, onMutate }) {
         let res = await changeCartItemNumber(id, number);
         if (res.ok) {
             items.filter(item => item.id === id)[0].number = number;
-            let filtered = selectedItems.filter(item => item.id === id);
-            if (filtered.length === 1) {
-                filtered[0].number = number;
+            let selected = selectedItems.find(item => item.id === id);
+            if (selected) {
+                selected.number = number;
                 setSelectedItems([...selectedItems]);
             }
             setItems([...items]);
