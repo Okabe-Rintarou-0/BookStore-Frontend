@@ -3,7 +3,7 @@
 该 repo 为上海交通大学课程“互联网应用开发技术(SE2321)” 的前端 demo 项目，供同学们学习参考。
 欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。
 
-UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。
+UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 https://ant.design/index-cn 学习各类组件使用方法。
 
 <div align="center">
     <img src="images/login.png" style="width: 48%;">
@@ -17,6 +17,25 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
   <img align="center" src="https://img.shields.io/github/contributors/Okabe-Rintarou-0/BookStore-Frontend" />
   <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
 </p>
+
+## 项目结构
+
+```
+├── ...
+├── Dockerfile          Docker 镜像构建文件
+├── package-lock.json   记录当前安装的 npm 包的确切版本
+├── package.json        包含项目的元数据和依赖项信息
+├── public              存放静态资源，如 HTML 文件、图片等
+└── src                 包含项目的源代码
+    ├── App.js          项目的根组件
+    ├── components      React 组件
+    ├── css             css 样式文件
+    ├── index.js        项目的入口文件
+    ├── lib             工具函数、工具类
+    ├── page            包含不同页面的组件，如首页、购物车页面
+    ├── service         后端交互的服务或 API 请求的代码
+    └── utils           通用的工具函数或帮助函数
+```
 
 ## 环境配置
 
