@@ -11,11 +11,13 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 </div>
 
 <p align="center">
-  <img align="center" src="https://img.shields.io/badge/node-21.x-blue">
+    <img align="center" src="https://img.shields.io/badge/node-21.x-blue">
     <img align="center" src="https://img.shields.io/badge/jdk-17-blue">
-  <img align="center" src="https://img.shields.io/github/issues/Okabe-Rintarou-0/BookStore-Frontend" /> 
-  <img align="center" src="https://img.shields.io/github/contributors/Okabe-Rintarou-0/BookStore-Frontend" />
-  <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
+    <img align="center" src="https://img.shields.io/github/issues/Okabe-Rintarou-0/BookStore-Frontend" />
+    <img align="center" src="https://img.shields.io/github/repo-size/Okabe-Rintarou-0/BookStore-Frontend" />
+    <img align="center" src="https://img.shields.io/docker/image-size/923048992/frontend/latest" />
+    <img align="center" src="https://img.shields.io/github/contributors/Okabe-Rintarou-0/BookStore-Frontend" />
+    <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
 </p>
 
 ## 项目结构
