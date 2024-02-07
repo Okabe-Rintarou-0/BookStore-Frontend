@@ -281,7 +281,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 
     ```javascript
     let array = [1, 2, 3];
-    let newArray = [..array, 4]; // [1, 2, 3, 4]
+    let newArray = [...array, 4]; // [1, 2, 3, 4]
     ```
 
     作用在对象上：
