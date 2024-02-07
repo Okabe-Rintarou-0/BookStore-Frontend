@@ -65,6 +65,10 @@ docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name boo
 
 我们开源了完整的前端项目，但是为了防止同学们照抄后端代码，所以只提供了后端 API 及其文档（你可以在启动前端后在 http://localhost:3000/api-docs 查看文档）。后端 API 采用 [RESTful](https://zhuanlan.zhihu.com/p/334809573) 形式。请在 `.env` 文件中修改环境变量 `REACT_APP_BASE_URL` 的值为我们提供的后端服务器的 URL。
 
+我们暂时不提供注册功能，你可以使用我们给定的账号密码登录，并按照如下方式修改密码：
+
+![](images/change_password.png)
+
 ## 学习指南
 本课程主要学习 `React` 框架，学有余力的同学也可以尝试一下 `Vue`。如果你感兴趣，这边也提供了 `Vue` 版本以供参考：[BookStore-Frontend-Vue](https://github.com/Okabe-Rintarou-0/BookStore-Frontend-Vue) 。
 

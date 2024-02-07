@@ -9,7 +9,15 @@ export async function get(url) {
 }
 
 export async function put(url, data) {
-    let res = await fetch(url, { method: "PUT", credentials: "include", body: JSON.stringify(data) });
+    let opts = {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: "include"
+    };
+    let res = await fetch(url, opts);
     return res.json();
 }
 
