@@ -3,7 +3,7 @@
 该 repo 为上海交通大学课程“互联网应用开发技术(SE2321)” 的前端 demo 项目，供同学们学习参考。
 欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。
 
-UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 https://ant.design/index-cn 学习各类组件使用方法。
+UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 https://ant-design.antgroup.com/index-cn 学习各类组件使用方法。
 
 <div align="center">
     <img src="images/login.png" style="width: 48%;">
@@ -277,7 +277,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 
 + Javascript 中的 `...` 运算符
 
-    作用在数组上就是将数组解开：
+    作用在数组上就是将数组展开：
 
     ```javascript
     let array = [1, 2, 3];
