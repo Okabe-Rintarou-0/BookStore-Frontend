@@ -18,6 +18,10 @@ export default function BookInfoCard({
     };
 
     const handleAddComment = async (comment) => {
+        if (comment === "") {
+            messageApi.error("评论不得为空！");
+            return;
+        }
         let res = await addBookComment(book.id, comment);
         handleBaseApiResponse(res, messageApi, onMutate);
     };

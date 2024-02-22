@@ -17,6 +17,10 @@ export default function BookComment({ comment, isReplying, onReply, onMutate }) 
     };
 
     const handleSubmitReply = async (content) => {
+        if (content === "") {
+            messageApi.error("回复不得为空！");
+            return;
+        }
         let res = await replyComment(comment.id, content);
         handleBaseApiResponse(res, messageApi, onMutate);
     };
