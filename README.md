@@ -52,6 +52,8 @@ npm install && npm start
 yarn install && yarn start
 ```
 
+启动后，你可以在 http://localhost:3000 访问前端。
+
 或者，使用 `Docker` 一键部署（仅测试用）：
 ```bash
 docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name bookstore-frontend 923048992/frontend
