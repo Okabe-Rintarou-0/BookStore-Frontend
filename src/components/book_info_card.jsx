@@ -36,7 +36,7 @@ export default function BookInfoCard({
 
     return <Card className="card-container">
         {contextHolder}
-        <Space direction="vertical">
+        <Space direction="vertical" style={{ width: "100%" }}>
             <BookDetails book={book} onAddCartItem={handleAddCartItem} />
             <div style={{ margin: 20 }}>
                 <Divider>书籍评论</Divider>

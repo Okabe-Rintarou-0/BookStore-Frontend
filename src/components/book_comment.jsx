@@ -51,6 +51,7 @@ export default function BookComment({ comment, isReplying, onReply, onMutate }) 
         </Space>
         {isReplying && <CommentInput placeholder={`回复 ${comment.username}：`}
             onSubmit={handleSubmitReply}
+            autoFocus
         />}
     </Space>
 
