@@ -52,7 +52,7 @@ npm install && npm start
 yarn install && yarn start
 ```
 
-启动后，你可以在 http://localhost:3000 访问前端。
+请确保进入 `package.json` 文件所在的目录后再执行上述命令。如果一切顺利，你会发现当前目录下生成了一个名为 `node_modules` 的目录，这里面是下载的第三方库（项目依赖）。启动后，你可以在 http://localhost:3000 访问前端。
 
 或者，使用 `Docker` 一键部署（仅测试用）：
 ```bash
