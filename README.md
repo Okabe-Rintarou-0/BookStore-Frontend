@@ -56,7 +56,7 @@ npm install && npm start
 yarn install && yarn start
 ```
 
-`npm install` 下载项目所需的依赖；`npm start` 则会启动前端项目。与 `Makefile` 类似，你也可以在 `package.json` 中定义自己的指令（你可以由此发现 `npm start` 是如何启动项目的）：
+`npm install` 下载项目所需的依赖（只需执行一次即可，后续无需再执行）；`npm start` 则会启动前端项目。与 `Makefile` 类似，你也可以在 `package.json` 中定义自己的指令（你可以由此发现 `npm start` 是如何启动项目的）：
 
 ```json
 "scripts": {
