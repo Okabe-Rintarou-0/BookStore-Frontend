@@ -1,7 +1,7 @@
 # 电子书城前端
 
 该 repo 为上海交通大学课程“互联网应用开发技术(SE2321)” 的前端 demo 项目，供同学们学习参考。
-欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。
+欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。如果你想参与问题、技术讨论，欢迎使用本 repo 的讨论模块：https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions 。
 
 UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 https://ant-design.antgroup.com/index-cn 学习各类组件使用方法。
 
@@ -52,6 +52,16 @@ npm install && npm start
 yarn install && yarn start
 ```
 
+`npm install` 下载项目所需的依赖；`npm start` 则会启动前端项目。与 `Makefile` 类似，你也可以在 `package.json` 中定义自己的指令（你可以由此发现 `npm start` 是如何启动项目的）：
+```
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+},
+```
+
 请确保进入 `package.json` 文件所在的目录后再执行上述命令。如果一切顺利，你会发现当前目录下生成了一个名为 `node_modules` 的目录，这里面是下载的第三方库（项目依赖）。启动后，你可以在 http://localhost:3000 访问前端。
 
 或者，使用 `Docker` 一键部署（仅测试用）：
@@ -67,14 +77,14 @@ docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name boo
 
 我们开源了完整的前端项目，但是为了防止同学们照抄后端代码，所以只提供了后端 API 及其文档（你可以在启动前端后在 http://localhost:3000/api-docs 查看文档）。后端 API 采用 [RESTful](https://zhuanlan.zhihu.com/p/334809573) 形式。请在 `.env` 文件中修改环境变量 `REACT_APP_BASE_URL` 的值为我们提供的后端服务器的 URL。
 
+请注意，如果你已经启动了前端项目，请先 CTRL + C 强制终止前端进程，然后再次重启，修改的环境变量才会生效。在校外的同学可能需要开启 [SJTUvpn](https://net.sjtu.edu.cn/wlfw/VPN.htm) 才能正常访问后端。
+
 我们暂时不提供注册功能，你可以使用我们给定的账号密码登录，并按照如下方式修改密码：
 
 ![](images/change_password.png)
 
 ## 学习指南
 本课程主要学习 `React` 框架，学有余力的同学也可以尝试一下 `Vue`。如果你感兴趣，这边也提供了 `Vue` 版本以供参考：[BookStore-Frontend-Vue](https://github.com/Okabe-Rintarou-0/BookStore-Frontend-Vue) 。
-
-如果你想参与问题、技术讨论，欢迎使用本 repo 的讨论模块：https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions 。
 
 ### 函数式组件
 React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组件。由于便利性，现在大家倾向于使用后者进行开发。函数式组件最令人头疼的就是各种 hooks（钩子函数）。所以学会各种 hooks 的用法是学好 React 的关键。
