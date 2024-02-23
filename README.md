@@ -53,7 +53,8 @@ yarn install && yarn start
 ```
 
 `npm install` 下载项目所需的依赖；`npm start` 则会启动前端项目。与 `Makefile` 类似，你也可以在 `package.json` 中定义自己的指令（你可以由此发现 `npm start` 是如何启动项目的）：
-```
+
+```json
 "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
