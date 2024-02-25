@@ -356,7 +356,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 
 + 使用 Typescript 代替 Javascript。
 + 使用 [useSWR](https://swr.vercel.app/zh-CN) / [React Query](https://cangsdarm.github.io/react-query-web-i18n/react/getstarted/quick-start/) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；
-+ 使用 [React.createContext](https://zh-hans.react.dev/reference/react/createContext) React原生方法，或者 [Redux](https://cn.redux.js.org/)、[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction#first-create-a-store) 等全局状态管理器更方便地传递上下文。（为什么要使用这些？了解React开发之中的[Props Drilling](https://www.geeksforgeeks.org/what-is-prop-drilling-and-how-to-avoid-it/)问题）
++ 使用 [React.createContext](https://zh-hans.react.dev/reference/react/createContext) React原生方法，或者 [Redux](https://cn.redux.js.org/)、[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction#first-create-a-store) 等全局状态管理器更方便地传递上下文。（为什么要使用这些？了解React开发之中的 [Props Drilling](https://www.geeksforgeeks.org/what-is-prop-drilling-and-how-to-avoid-it/) 问题）
 
 ## 致谢
 
