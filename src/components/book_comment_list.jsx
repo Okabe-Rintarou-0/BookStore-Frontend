@@ -13,7 +13,7 @@ export default function BookCommentList({ comments, onMutate }) {
             itemLayout="horizontal"
             dataSource={comments}
             renderItem={comment => <BookComment comment={comment}
-                isReplying={replying == comment.id}
+                isReplying={replying === comment.id}
                 onMutate={handleMutate}
                 onReply={() => setReplying(comment.id)} />}
         />

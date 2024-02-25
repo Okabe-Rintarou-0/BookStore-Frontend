@@ -1,9 +1,9 @@
 # 电子书城前端
 
 该 repo 为上海交通大学课程“互联网应用开发技术(SE2321)” 的前端 demo 项目，供同学们学习参考。
-欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。如果你想参与问题、技术讨论，欢迎使用本 repo 的讨论模块：https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions 。
+欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。如果你想参与问题、技术讨论，欢迎使用本 repo 的[讨论模块](https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions)。
 
-UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 https://ant-design.antgroup.com/index-cn 学习各类组件使用方法。
+UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁明了。项目主要使用 `Ant Design` 框架，请参考 [Ant Design 5.0](https://ant-design.antgroup.com/index-cn) 学习各类组件使用方法。
 
 <div align="center">
     <img src="images/login.png" style="width: 48%;">
@@ -45,7 +45,8 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 
 ## 环境配置
 
-请下载最新版本的 node(21.x)。如果你学过 python 的话，你应该清楚 pip 是一个功能强大的包管理器。与其类似，你可以选择 `npm` 或者 `yarn` 作为 node 的包管理器。
+请下载最新版本的 [nodejs(21.x)](https://nodejs.org/en/download/current)。如果你使用的是 macOS，建议使用 [Homebrew](https://brew.sh/) 安装。
+如果你学过 python 的话，你应该清楚 pip 是一个功能强大的包管理器。与其类似，你可以选择 `npm` 或者 `yarn` 作为 node 的包管理器。
 
 通过以下命令，你可以轻松启动前端项目（推荐）：
 ```bash
@@ -56,7 +57,7 @@ npm install && npm start
 yarn install && yarn start
 ```
 
-对于`npm`下载速度慢的问题，可以考虑使用淘宝源、腾讯源或者[SJTUG镜像源]([上海交通大学 Linux 用户组 软件源镜像服务 (sjtu.edu.cn)](https://mirrors.sjtug.sjtu.edu.cn/docs/npm-registry))，具体换源命令请自行检索，推荐使用`nrm`工具管理源。
+对于 `npm` 下载速度慢的问题，可以考虑使用淘宝源、腾讯源或者 [SJTUG 镜像源](https://mirrors.sjtug.sjtu.edu.cn/docs/npm-registry)，具体换源命令请自行检索，推荐使用 `nrm` 工具管理源。
 
 `npm install` 下载项目所需的依赖（只需执行一次即可，后续无需再执行）；`npm start` 则会启动前端项目。与 `Makefile` 类似，你也可以在 `package.json` 中定义自己的指令（你可以由此发现 `npm start` 是如何启动项目的）：
 
@@ -76,7 +77,7 @@ yarn install && yarn start
 docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name bookstore-frontend 923048992/frontend
 ```
 
-如果你使用的是 macos，请使用 `923048992/frontend:mac` 镜像。
+如果你使用的是 macOS，请使用 `923048992/frontend:mac` 镜像。
 
 如果你希望快速新建一个 `React` 项目，请参考：[create-react-app](https://create-react-app.dev/docs/getting-started) 或者 [vite](https://vitejs.dev/)。
 
@@ -84,8 +85,15 @@ docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name boo
 
 我们开源了完整的前端项目，但是为了防止同学们照抄后端代码，所以只提供了后端 API 及其文档（你可以在启动前端后在 http://localhost:3000/api-docs 查看文档）。后端 API 采用 [RESTful](https://zhuanlan.zhihu.com/p/334809573) 形式。请在 `.env` 文件中修改环境变量 `REACT_APP_BASE_URL` 的值为我们提供的后端服务器的 URL。
 
-如果你使用[vite](https://vitejs.dev)来创建自己的项目，需要注意项目源代码之中`export const BASEURL = process.env.REACT_APP_BASE_URL ?? 'http://localhost:8080';`是设置了使用npm启动时的环境变量，你需要将其修改成`export const BASEURL =
- import.meta.env.VITE_REACT_APP_BASE_URL ?? "http://localhost:8080";`的形式，并将所有在`.env`之中定义的环境变量加上`VITE_`前缀以向vite标识。
+如果你使用 [vite](https://vitejs.dev) 来创建自己的项目，需要注意项目源代码之中
+```javascript
+export const BASEURL = process.env.REACT_APP_BASE_URL ?? 'http://localhost:8080';
+```
+是设置了使用npm启动时的环境变量，你需要将其修改成：
+```javascript
+export const BASEURL = import.meta.env.VITE_REACT_APP_BASE_URL ?? "http://localhost:8080";
+```
+的形式，并将所有在 `.env` 之中定义的环境变量加上 `VITE_` 前缀以向 `vite` 标识。
 
 请注意，如果你已经启动了前端项目，请先 CTRL + C 强制终止前端进程，然后再次重启，修改的环境变量才会生效。在校外的同学可能需要开启 [SJTUvpn](https://net.sjtu.edu.cn/wlfw/VPN.htm) 才能正常访问后端。
 
@@ -185,12 +193,12 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 异步函数也是一大重点，建议大家学习好两种方式：**回调函数** 和 **await** 方式，本项目均采用后者，避免过多回调函数产生不美观和“回调地狱”。
 可以参考：
 
-+ https://juejin.cn/post/7108187709076111367
++ [什么是回调地狱，如何用Promise解决回调地狱，看完这篇你就明白了。](https://juejin.cn/post/7108187709076111367)
 
 ### 养成良好的习惯
 
-+ 对于列表组件，每一项都需要 `key` 属性：https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html 。`key` 属性很重要，React 利用 key 来识别组件，它是一种身份标识标识，就像我们的身份证用来辨识一个人一样。每个 key 对应一个组件，相同的 key 会被认为是同一个组件，这样后续相同的 key 对应组件都不会被重新创建。
-+ 善用浏览器开发者工具：控制台、网络、[React Developer Devtools插件](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)、[React Query Devtools]([Devtools | TanStack Query Docs](https://tanstack.com/query/latest/docs/framework/react/devtools))...
++ 对于列表组件，每一项都需要 `key` 属性：[列表 & Key](https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html) 。`key` 属性很重要，React 利用 key 来识别组件，它是一种身份标识标识，就像我们的身份证用来辨识一个人一样。每个 key 对应一个组件，相同的 key 会被认为是同一个组件，这样后续相同的 key 对应组件都不会被重新创建。
++ 善用浏览器开发者工具：控制台、网络、[React Developer Devtools 插件](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)、[React Query Devtools](https://tanstack.com/query/latest/docs/framework/react/devtools)...
 + 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
 
 ## Tricks
@@ -347,8 +355,20 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 ## 进阶
 
 + 使用 Typescript 代替 Javascript。
-+ 使用 [useSWR](https://swr.vercel.app/zh-CN)/[React Query](https://cangsdarm.github.io/react-query-web-i18n/react/getstarted/quick-start/) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；
-+ 使用 [React.createContext](https://zh-hans.react.dev/reference/react/createContext) React原生方法 或者 [Redux]([Redux 中文官网 - JavaScript 应用的状态容器，提供可预测的状态管理。 | Redux 中文官网](https://cn.redux.js.org/))、[Zustand]([Zustand Documentation (pmnd.rs)](https://docs.pmnd.rs/zustand/getting-started/introduction#first-create-a-store))等全局状态管理器更方便地传递上下文。（为什么要使用这些？了解React开发之中的[Props Drilling](https://www.geeksforgeeks.org/what-is-prop-drilling-and-how-to-avoid-it/)问题）
++ 使用 [useSWR](https://swr.vercel.app/zh-CN) / [React Query](https://cangsdarm.github.io/react-query-web-i18n/react/getstarted/quick-start/) + [axios](https://www.npmjs.com/package//axios) 代替 `fetch` 方案；
++ 使用 [React.createContext](https://zh-hans.react.dev/reference/react/createContext) React原生方法，或者 [Redux](https://cn.redux.js.org/)、[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction#first-create-a-store) 等全局状态管理器更方便地传递上下文。（为什么要使用这些？了解React开发之中的[Props Drilling](https://www.geeksforgeeks.org/what-is-prop-drilling-and-how-to-avoid-it/)问题）
 
+## 致谢
 
+感谢以下用户为本仓库做出的贡献：
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Ayanami1314" style="display:inline-block;width:80px">
+        <img src="https://github.com/Ayanami1314.png" width="64px;" alt="Ayanami1314"/><br/>
+        <sub><b>Ayanami1314</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
