@@ -372,3 +372,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     </td>
   </tr>
 </table>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Okabe-Rintarou-0/BookStore-Frontend&type=Date)](https://star-history.com/#Okabe-Rintarou-0/BookStore-Frontend&Date)
