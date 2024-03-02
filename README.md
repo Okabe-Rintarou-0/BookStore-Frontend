@@ -179,6 +179,8 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
             setSomeVar(newValue);
         });
         ```
++ [useRef](https://zh-hans.react.dev/reference/react/useRef)：帮助引用一个不需要渲染的值，见链接介绍。
++ [useMemo](https://zh-hans.react.dev/reference/react/useMemo)：在每次重新渲染的时候能够缓存计算的结果，见链接介绍。
 + [useLocation](https://reactrouter.com/en/main/hooks/use-location)：获取前端当前 URL.
 + [useSearchParams](https://reactrouter.com/en/main/hooks/use-search-params)：获取 URL query 参数。
 + [useNavigate](https://reactrouter.com/en/main/hooks/use-navigate)：用于进行页面跳转。
@@ -195,8 +197,16 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 
 + [什么是回调地狱，如何用Promise解决回调地狱，看完这篇你就明白了。](https://juejin.cn/post/7108187709076111367)
 
+### 闭包陷阱
+
+当你在箭头函数中发现一个变量怎么样都拿不到最新的值的时候，很可能是因为你遇到了“闭包陷阱”。
+请参考：[一文讲透 React Hooks 闭包陷阱](https://juejin.cn/post/7230819482012237861)
+
+解决方案：使用 [useRef](https://zh-hans.react.dev/reference/react/useRef)。
+
 ### 养成良好的习惯
 
++ javascript 里面判断变量相等应该用 `===`。
 + 对于列表组件，每一项都需要 `key` 属性：[列表 & Key](https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html) 。`key` 属性很重要，React 利用 key 来识别组件，它是一种身份标识标识，就像我们的身份证用来辨识一个人一样。每个 key 对应一个组件，相同的 key 会被认为是同一个组件，这样后续相同的 key 对应组件都不会被重新创建。
 + 善用浏览器开发者工具：控制台、网络、[React Developer Devtools 插件](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)、[React Query Devtools](https://tanstack.com/query/latest/docs/framework/react/devtools)...
 + 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
