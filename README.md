@@ -20,6 +20,14 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
     <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
 </p>
 
+## 什么是前端
+
+一个最简单的前后端架构图：
+
+![](./images/arch.png)
+
+> 前端一词是指用户可以直接与之交互的图形用户界面（GUI），例如导航菜单、设计元素、按钮、图像和图表。采用技术术语，用户看到的带有多个 UI 组件的页面或屏幕称为文档对象模型（DOM）。—— [应用程序开发中的前端和后端之间有什么区别？](https://aws.amazon.com/cn/compare/the-difference-between-frontend-and-backend/)
+
 ## 项目结构
 
 ```
@@ -213,6 +221,7 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 + 对于列表组件，每一项都需要 `key` 属性：[列表 & Key](https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html) 。`key` 属性很重要，React 利用 key 来识别组件，它是一种身份标识标识，就像我们的身份证用来辨识一个人一样。每个 key 对应一个组件，相同的 key 会被认为是同一个组件，这样后续相同的 key 对应组件都不会被重新创建。
 + 善用浏览器开发者工具：控制台、网络、[React Developer Devtools 插件](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)、[React Query Devtools](https://tanstack.com/query/latest/docs/framework/react/devtools)...
 + 需要复用、较复杂的组件应进行封装，避免嵌套过深、重复编码。
++ 学会 Mock：[「前端该如何优雅地Mock数据🏃」每个前端都应该学会的技巧](https://segmentfault.com/a/1190000041457114)
 
 ## Tricks
 
