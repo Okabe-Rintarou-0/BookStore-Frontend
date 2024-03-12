@@ -217,6 +217,10 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
 ### 避免 CSS 冲突
 请参考：[react 中 css modules-基本使用](https://juejin.cn/post/7031528538209681444)
 
+### 依赖添加
+
+见[依赖添加指南](./docs/add_deps.md)。
+
 ### 养成良好的习惯
 
 + javascript 里面判断变量相等应该用 `===`。
