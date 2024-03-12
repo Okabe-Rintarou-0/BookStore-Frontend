@@ -36,7 +36,9 @@
 
 + 选择通过 JSON 导入
 
-    ![](../images/import_by_json.png)
+    ![](../images/import_by_json1.png)
+
+    ![](../images/import_by_json2.png)
 
 
 + Apifox 会自动帮你保存 `Cookies`
