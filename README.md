@@ -375,6 +375,10 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     };
     ```
 
+## 插件推荐
+
++ [React1s](https://chromewebstore.google.com/detail/gpcoahaomdfmekggblkckofkgjggnjlp): 点击页面元素跳转到编辑器。
+
 ## 一些示例
 + [获取输入组件的值](https://codesandbox.io/p/sandbox/example-1-monitor-input-value-w873x6?file=%2Fsrc%2FApp.js)
 + [使用 React Context](https://codesandbox.io/p/sandbox/example-2-context-cwltjm)
