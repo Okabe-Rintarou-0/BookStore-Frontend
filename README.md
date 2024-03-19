@@ -20,6 +20,8 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
     <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
 </p>
 
+各类文档 👉 [文档索引](./docs/README.md)。
+
 ## 什么是前端
 
 一个最简单的前后端架构图：
