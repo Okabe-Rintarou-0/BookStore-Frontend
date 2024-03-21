@@ -22,6 +22,13 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 
 各类文档 👉 [文档索引](./docs/README.md)。
 
+## ⚠️注意
+为了便于同学们专注开发前端，我们提供了后端服务。但是由于你们本地的前端（localhost）到我们的远程后端属于是跨站调用，这就会引发跨站传递 `Cookies` 的问题：[Cookie Samesite简析](https://zhuanlan.zhihu.com/p/266282015)。`Chrome` 浏览器在不需要更改偏好设置的情况下就能正常使用，而 `Edge` 和 `Safari` 对 `SameSite` 识别解析有一定问题，所以我们推荐使用 `Chrome`。
+
+> 部分浏览器不支持部分SameSite=none。IOS 12 的 Safari 以及老版本的一些 Chrome 会把 SameSite=none 识别成 SameSite=Strict，所以服务端必须在下发 Set-Cookie 响应头时进行 User-Agent 检测，对这些浏览器不下发 SameSite=none 属性。
+
+上面的问题你暂时看不懂也不要紧。请注意，后续你们在本地进行开发的时候没有任何（主流的）浏览器限制，只不过每一种浏览器 UI 会有些许变化。你们本地开发前后端也不会有跨站问题（localhost:3000 -> localhost:8080）。
+
 ## 什么是前端
 
 一个最简单的前后端架构图：
