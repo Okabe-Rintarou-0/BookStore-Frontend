@@ -102,7 +102,7 @@ docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name boo
 
 我们开源了完整的前端项目，但是为了防止同学们照抄后端代码，所以只提供了后端 API 及其文档（你可以在启动前端后在 http://localhost:3000/api-docs 查看文档）。后端 API 采用 [RESTful](https://zhuanlan.zhihu.com/p/334809573) 形式。请在 `.env` 文件中修改环境变量 `REACT_APP_BASE_URL` 的值为我们提供的后端服务器的 URL。
 
-如果你想调试 API，请查看[后端 API 使用指南](./docs/API_usage.md)。
+如果你想调试 API，请查看[后端 API 使用指南](./docs/API_usage.md)。如果你想在前端中调用后端 API，请参考：[Sending a request with credentials included](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#sending_a_request_with_credentials_included) 等文档。
 
 如果你使用 [vite](https://vitejs.dev) 来创建自己的项目，需要注意项目源代码之中
 ```javascript
