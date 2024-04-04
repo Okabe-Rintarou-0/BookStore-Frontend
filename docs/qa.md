@@ -20,7 +20,7 @@
 
 + Q: intellij的license是自己去申请吗？
 
-    A: idea 是可以免费用的：http://lic.si.sjtu.edu.cn/Default/huatishow/tag/MDAwMDAwMDAwMLJ4iqE 。
+    A: idea 是可以免费用的：[JetBrains（在线授权版）安装和授权流程](http://lic.si.sjtu.edu.cn/Default/huatishow/tag/MDAwMDAwMDAwMLJ4iqE)。
 
 + Q: 第一次迭代必须要用ant design吗？
 
@@ -39,7 +39,7 @@
   useEffect 在严格模式下会执行两次，以便于发现是否有不该出现的副作用（两次执行应该一致），这是在开发模式才会有，生产模式就不会。一种做法是干脆注释掉 StrictMode，一种就是避免副作用。
 
   参考：
-  https://segmentfault.com/q/1010000042223485?utm_source=sf-similar-question
+  [React.StrictMode在开发环境下,useEffect会自动执行return?](https://segmentfault.com/q/1010000042223485?utm_source=sf-similar-question)
 
 
 + Q: 我从作业1都用了Next ReactJS 里的App Router和Material UI，功能都与之前的需求实现好了，我这里还需要改成React Router和Ant Design吗？
