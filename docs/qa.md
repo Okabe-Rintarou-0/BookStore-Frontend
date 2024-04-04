@@ -33,9 +33,40 @@
 + Q: 作业2的书店可以直接连提供的后端吗?
 
     A: 你可以直接利用我们给的后端来开发你的前端，我们欢迎、支持这么做。
+    
 + Q: 为什么 useEffect 执行了两次：
 
   useEffect 在严格模式下会执行两次，以便于发现是否有不该出现的副作用（两次执行应该一致），这是在开发模式才会有，生产模式就不会。一种做法是干脆注释掉 StrictMode，一种就是避免副作用。
 
   参考：
   https://segmentfault.com/q/1010000042223485?utm_source=sf-similar-question
+
+
++ Q: 我从作业1都用了Next ReactJS 里的App Router和Material UI，功能都与之前的需求实现好了，我这里还需要改成React Router和Ant Design吗？
+
+    A: 不需要修改，本身框架不需要绑定。但是压根不用react用vue不可以，这样和我们上课内容差距太大了。
+
++ Q: 为什么读取不到 `myLayout` 的值呢
+
+    ```javascript
+    return (
+        <myLayout>
+            ...
+        </myLayout>
+    )
+    ```
+
+    A: 自己写的组件需要首字母大写，以与原生标签作区分。
+
++ Q: 为什么还是读不到？
+
+    ```javascript
+    return 
+    (
+        <myLayout>
+            ...
+        </myLayout>
+    )
+    ```
+
+    A: 不需要圆括号，并且要放在 return 后面，不用换行。原因是 js这东西其实换行了就算一个语句，分号不是必须的。
