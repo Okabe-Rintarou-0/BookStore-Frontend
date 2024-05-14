@@ -27,6 +27,34 @@ public class SessionUtils {
 }
 ```
 
+## 登陆拦截器
+
+```java
+@Component
+public class SessionInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        return true;
+    }
+}
+```
+
+```java
+@Configuration
+public class SessionConfig implements WebMvcConfigurer {
+    @Autowired
+    private SessionInterceptor sessionInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(sessionInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/xxx");
+    }
+}
+```
+
+
 ## 图片存储格式指南
 
 一般而言，后端存储图片可以存图片的 URL（背后需要有一个文件服务器，不建议用第三方图床，文件服务器肯定是自己维护的）；或者是以 base64 格式存储图片。
