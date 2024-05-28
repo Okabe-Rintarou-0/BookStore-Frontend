@@ -1,5 +1,24 @@
 # 后端开发指南
 
+## 推荐阅读
++ [Session/Cookie/Token 还傻傻分不清？](https://mp.weixin.qq.com/s/5oFKdbFWgZrwqESNTZn77w)
++ [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
+
+## 使用 lambok 简化你的代码
+
+```java
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class SomeEntity {}
+```
+
+`@Data` 帮你实现了 `getter` 和 `setter`。
+
+## 如何使用 jwt
+
+参见：https://github.com/auth0/java-jwt
+
 ## 如何维护 Http Session
 
 写一个 SessionUtils，框架帮你维护 Session 数据结构。JSESSIONID 对应一个 session，每个 session 都是一个类似 map 的 key-value 存储结构。
