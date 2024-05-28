@@ -53,6 +53,8 @@ public class SessionUtils {
 public class SessionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        HttpSession session = request.getSession(false);
+        // Do something here
         return true;
     }
 }
