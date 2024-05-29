@@ -1,5 +1,7 @@
 # 后端开发指南
 
+![](../images/backend_arch.svg)
+
 ## 推荐阅读
 + [Session/Cookie/Token 还傻傻分不清？](https://mp.weixin.qq.com/s/5oFKdbFWgZrwqESNTZn77w)
 + [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
