@@ -4,6 +4,10 @@
 + [Session/Cookie/Token 还傻傻分不清？](https://mp.weixin.qq.com/s/5oFKdbFWgZrwqESNTZn77w)
 + [Spring Data JPA](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
 
+## IntelliJ 使用常见问题
+
+参见讨论区：https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions/38
+
 ## 使用 lambok 简化你的代码
 
 ```java
@@ -55,7 +59,7 @@ public class SessionInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         HttpSession session = request.getSession(false);
         // Do something here
-        
+
         return true;
     }
 }
