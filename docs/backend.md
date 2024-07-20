@@ -110,3 +110,14 @@ public class SessionConfig implements WebMvcConfigurer {
     base64 会将图片大小增加约 1/3，虽然减少了一次 http 请求，但是增大了文件体积。你可以在后端数据库直接存储 base64，然后传输给前端直接显示。
 
 两种方式最直观的区别就是前者图片不存入数据库，后者则反之。
+
+## 使用 Multipart 接收上传的文件
+
+后端应该以 Multipart 的方式接收前端上传的文件：
+
+```java
+@PostMapping("/upload")
+SomeResponse handleUpload(@RequestParam("file") MultipartFile file) {}
+```
+
+前端应以 form data 的格式添加文件。如果你使用的是 Antd，请仔细阅读 [Upload 组件](https://ant-design.antgroup.com/components/upload-cn).
