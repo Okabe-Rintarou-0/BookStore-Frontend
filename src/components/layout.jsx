@@ -37,7 +37,7 @@ export function PrivateLayout({ children }) {
             }
         }
         checkLogin();
-    }, []);
+    }, [navigate]);
 
     return (
         <Layout className="basic-layout">

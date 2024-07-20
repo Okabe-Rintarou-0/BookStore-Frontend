@@ -1,6 +1,6 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import BookInfoCard from "../components/book_info_card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getBookById, getBookComments } from "../service/book";
 import { PrivateLayout } from "../components/layout";
 
@@ -13,25 +13,23 @@ export default function BookPage() {
     const sort = searchParams.get("sort") ?? "createdTime";
 
     let { id } = useParams();
-
-    const getBook = async () => {
+    const getBook = useCallback(async () => {
         let book = await getBookById(id);
         setBook(book);
-    }
+    }, [id]);
 
-    const getComments = async () => {
+    const getComments = useCallback(async () => {
         let comments = await getBookComments(id, pageIndex, pageSize, sort);
         setComments(comments);
-    }
+    }, [id, pageIndex, pageSize, sort]);
 
     useEffect(() => {
         getBook();
-        getComments();
-    }, [id]);
+    }, [getBook]);
 
     useEffect(() => {
         getComments();
-    }, [pageIndex, pageSize, sort])
+    }, [getComments]);
 
     const handleMutate = () => {
         getComments();
