@@ -1,0 +1,2 @@
+[codespell]
+skip = .git,*.pdf,*.svg,yarn.lock,package.json,tsconfig.json,tsconfig.node.json,vite.config.ts
