@@ -17,15 +17,14 @@ export default function HomePage() {
     const pageIndex = searchParams.get("pageIndex") != null ? Number.parseInt(searchParams.get("pageIndex")) : 0;
     const pageSize = searchParams.get("pageSize") != null ? Number.parseInt(searchParams.get("pageSize")) : 10;
 
-    const getBooks = async () => {
-        let pagedBooks = await searchBooks(keyword, pageIndex, pageSize);
-        let books = pagedBooks.items;
-        let totalPage = pagedBooks.total;
-        setBooks(books);
-        setTotalPage(totalPage);
-    };
-
     useEffect(() => {
+        const getBooks = async () => {
+            let pagedBooks = await searchBooks(keyword, pageIndex, pageSize);
+            let books = pagedBooks.items;
+            let totalPage = pagedBooks.total;
+            setBooks(books);
+            setTotalPage(totalPage);
+        };
         getBooks();
     }, [keyword, pageIndex, pageSize])
 

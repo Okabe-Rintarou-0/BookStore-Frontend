@@ -27,16 +27,15 @@ export function PrivateLayout({ children }) {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
-    const checkLogin = async () => {
-        let me = await getMe();
-        if (!me) {
-            navigate("/login");
-        } else {
-            setUser(me);
-        }
-    }
-
     useEffect(() => {
+        const checkLogin = async () => {
+            let me = await getMe();
+            if (!me) {
+                navigate("/login");
+            } else {
+                setUser(me);
+            }
+        }
         checkLogin();
     }, []);
 
