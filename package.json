@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^14.5.2",
     "antd": "^5.18.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "swagger-ui-react": "^5.17.14",
