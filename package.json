@@ -9,6 +9,7 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "antd": "^5.19.3",
+    "antd-img-crop": "^4.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",

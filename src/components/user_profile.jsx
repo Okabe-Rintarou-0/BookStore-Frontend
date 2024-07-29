@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AVATAR_UPLOAD_URL, AVATAR_FILES_PREFIX, changeIntroduction, getMe } from "../service/user";
 import { handleBaseApiResponse } from "../utils/message";
 import useMessage from "antd/es/message/useMessage";
+import ImgCrop from 'antd-img-crop'
 
 export default function UserProfile() {
     const { user, setUser } = useContext(UserContext);
@@ -64,9 +65,7 @@ export default function UserProfile() {
             type="button"
         >
             <PlusOutlined />
-            <div>
-                上传
-            </div>
+            <div>上传</div>
         </button>
     );
 
@@ -96,19 +95,21 @@ export default function UserProfile() {
                     />
                 </Badge>
             </div>}
-            {editAvatar && <Upload
-                name="file"
-                accept="image/*"
-                listType="picture-circle"
-                className="avatar-uploader"
-                showUploadList={false}
-                beforeUpload={beforeUpload}
-                onChange={handleChange}
-                withCredentials={true}
-                action={AVATAR_UPLOAD_URL}
-            >
-                {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: "100px", height: "100px" }} /> : uploadButton}
-            </Upload>}
+            {editAvatar && <ImgCrop showGrid showReset rotationSlider modalOk="确定" modalCancel="取消" >
+                <Upload
+                    name="file"
+                    accept="image/*"
+                    listType="picture-circle"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    beforeUpload={beforeUpload}
+                    onChange={handleChange}
+                    withCredentials={true}
+                    action={AVATAR_UPLOAD_URL}
+                >
+                    {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: "100px", height: "100px" }} /> : uploadButton}
+                </Upload>
+            </ImgCrop>}
             <span style={{ fontSize: 20 }}>{user?.nickname}</span>
             <Space style={{ color: "grey" }}>
                 {!editIntroduction && <>
