@@ -1,6 +1,7 @@
 # 后端开发指南
-
-![](../images/backend_arch.svg)
+<p align="center">
+    <img src="../images/backend_arch.svg" alt="arch" width="50%" />
+</p>
 
 ## 推荐阅读
 + [Session/Cookie/Token 还傻傻分不清？](https://mp.weixin.qq.com/s/5oFKdbFWgZrwqESNTZn77w)
