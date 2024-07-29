@@ -15,7 +15,7 @@
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "swagger-ui-react": "^5.17.14",
-    "web-vitals": "^4.2.1"
+    "web-vitals": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
