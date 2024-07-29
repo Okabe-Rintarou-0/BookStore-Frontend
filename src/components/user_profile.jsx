@@ -90,7 +90,7 @@ export default function UserProfile() {
                     offset={[-5, 85]} // Adjust the position of the button
                 >
                     <Avatar
-                        src={user?.avatar ? AVATAR_FILES_PREFIX + user.avatar : "default_avatar.jpeg"}
+                        src={user?.avatar ? AVATAR_FILES_PREFIX + user.avatar : "/default_avatar.jpeg"}
                         style={{ width: "100px", height: "100px" }}
                     />
                 </Badge>

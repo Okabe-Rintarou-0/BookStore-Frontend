@@ -7,6 +7,7 @@ import { likeComment, replyComment, unlikeComment } from "../service/comment";
 import { handleBaseApiResponse } from "../utils/message";
 import useMessage from "antd/es/message/useMessage";
 import { AVATAR_FILES_PREFIX } from "../service/user";
+import { Link } from "react-router-dom";
 
 export default function BookComment({ comment, isReplying, onReply, onMutate }) {
     const content = comment.content;
@@ -60,7 +61,9 @@ export default function BookComment({ comment, isReplying, onReply, onMutate }) 
         {contextHolder}
         <List.Item key={comment.id}>
             <List.Item.Meta
-                avatar={comment.avatar ? <Avatar src={AVATAR_FILES_PREFIX + comment.avatar} /> : <UsernameAvatar username={comment.username} />}
+                avatar={<Link to={`/profile/${comment.userId}`}>
+                    {comment.avatar ? <Avatar src={AVATAR_FILES_PREFIX + comment.avatar} /> : <UsernameAvatar username={comment.username} />}
+                </Link>}
                 title={<div style={{ color: "grey" }}>{comment.username}</div>}
                 description={contentComponent}
             />
