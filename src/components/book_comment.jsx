@@ -1,4 +1,4 @@
-import { List, Space } from "antd";
+import { Avatar, List, Space } from "antd";
 import UsernameAvatar from "./username_avatar";
 import LikeButton from "./like_button";
 import { formatTime } from "../utils/time";
@@ -6,6 +6,7 @@ import CommentInput from "./comment_input";
 import { likeComment, replyComment, unlikeComment } from "../service/comment";
 import { handleBaseApiResponse } from "../utils/message";
 import useMessage from "antd/es/message/useMessage";
+import { AVATAR_FILES_PREFIX } from "../service/user";
 
 export default function BookComment({ comment, isReplying, onReply, onMutate }) {
     const content = comment.content;
@@ -59,7 +60,7 @@ export default function BookComment({ comment, isReplying, onReply, onMutate }) 
         {contextHolder}
         <List.Item key={comment.id}>
             <List.Item.Meta
-                avatar={<UsernameAvatar username={comment.username} />}
+                avatar={comment.avatar ? <Avatar src={AVATAR_FILES_PREFIX + comment.avatar} /> : <UsernameAvatar username={comment.username} />}
                 title={<div style={{ color: "grey" }}>{comment.username}</div>}
                 description={contentComponent}
             />
