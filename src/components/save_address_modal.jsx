@@ -1,41 +1,31 @@
-import { Button, Form, Input, Modal, Select } from "antd";
-import React, { useEffect, useState } from "react";
+import { Button, Form, Input, Modal } from "antd";
+import React from "react";
 import useMessage from "antd/es/message/useMessage";
-import { placeOrder } from "../service/order";
 import { handleBaseApiResponse } from "../utils/message";
-import { getMyAddresses } from "../service/user";
+import { addMyAddress } from "../service/user";
 
 const { TextArea } = Input;
-export default function PlaceOrderModal({
-    selectedItems,
-    onOk,
-    onCancel }) {
+export default function SaveAddressModal({ onOk, onCancel }) {
     const [form] = Form.useForm();
     const [messageApi, contextHolder] = useMessage();
-    const [addresses, setAddresses] = useState([]);
-
-    useEffect(() => {
-        getMyAddresses().then(setAddresses);
-    }, []);
 
     const handleSubmit = async ({ address, receiver, tel }) => {
         if (!address || !receiver || !tel) {
             messageApi.error("请填写完整信息！");
             return;
         }
-        let orderInfo = {
+        let request = {
             address,
             receiver,
-            tel,
-            itemIds: selectedItems.map(item => item.id)
+            tel
         }
-        let res = await placeOrder(orderInfo);
+        let res = await addMyAddress(request);
         handleBaseApiResponse(res, messageApi, onOk);
     };
 
     return (
         <Modal
-            title={"确认下单"}
+            title={"添加新地址"}
             open
             onOk={onOk}
             onCancel={onCancel}
@@ -43,24 +33,6 @@ export default function PlaceOrderModal({
             width={800}
         >
             {contextHolder}
-            {addresses.length > 0 &&
-                <Select placeholder="选择常用地址" options={addresses.map(address => ({
-                    value: [address.receiver, address.tel, address.address],
-                    label: `${address.receiver}, ${address.tel}, ${address.address}`
-                }))}
-                    style={{
-                        marginBottom: 10,
-                        width: "100%"
-                    }}
-                    onSelect={address => {
-                        form.setFieldsValue({
-                            receiver: address[0],
-                            tel: address[1],
-                            address: address[2]
-                        });
-                    }}
-                >
-                </Select>}
             <Form
                 form={form}
                 layout="vertical"
@@ -90,7 +62,7 @@ export default function PlaceOrderModal({
                 </Form.Item>
                 <Form.Item>
                     <Button type="primary" htmlType="submit">
-                        提交
+                        添加
                     </Button>
                 </Form.Item>
             </Form>
