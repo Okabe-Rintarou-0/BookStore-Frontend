@@ -1,7 +1,9 @@
 import { DUMMY_RESPONSE, PREFIX, getJson, post } from "./common";
 
-export async function searchBooks(keyword, pageIndex, pageSize) {
-    const url = `${PREFIX}/books?keyword=${keyword}&pageIndex=${pageIndex}&pageSize=${pageSize}`;
+export async function searchBooks(tag, keyword, pageIndex, pageSize) {
+    tag = encodeURIComponent(tag);
+    keyword = encodeURIComponent(keyword);
+    const url = `${PREFIX}/books?tag=${tag}&keyword=${keyword}&pageIndex=${pageIndex}&pageSize=${pageSize}`;
     let books;
     try {
         books = await getJson(url);
@@ -13,6 +15,18 @@ export async function searchBooks(keyword, pageIndex, pageSize) {
         };
     }
     return books;
+}
+
+export async function getAllBookTags() {
+    const url = `${PREFIX}/book/tags`;
+    let tags;
+    try {
+        tags = await getJson(url);
+    } catch (e) {
+        console.log(e);
+        tags = [];
+    }
+    return tags;
 }
 
 export async function getBookById(id) {

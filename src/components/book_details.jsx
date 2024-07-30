@@ -1,4 +1,4 @@
-import { Button, Col, Image, Row, Space } from "antd";
+import { Button, Col, Image, Row, Space, Tag } from "antd";
 import { Divider, Typography } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 
@@ -18,6 +18,8 @@ export default function BookDetails({ book, onAddCartItem }) {
                         {`作者：${book.author}`}
                         <Divider type="vertical" />
                         {`销量：${book.sales}`}
+                        <Divider type="vertical" />
+                        标签：{book.tags.map(t => <Tag>{t.name}</Tag>)}
                     </Paragraph>
                 </Space>
                 <Divider orientation="left">作品简介</Divider>
