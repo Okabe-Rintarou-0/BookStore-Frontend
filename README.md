@@ -20,7 +20,7 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
     <img align="center" src="https://img.shields.io/github/stars/Okabe-Rintarou-0/BookStore-Frontend" /> 
 </p>
 
-各类文档 👉 [文档索引](./docs/README.md)。
+各类文档 👉 [文档索引](./docs/README.md)，[课程要求](./public/requirements.pdf)
 
 ## ⚠️注意
 为了便于同学们专注开发前端，我们提供了后端服务。但是由于你们本地的前端（localhost）到我们的远程后端属于是跨站调用，这就会引发跨站传递 `Cookies` 的问题：[Cookie Samesite简析](https://zhuanlan.zhihu.com/p/266282015)。`Chrome` 浏览器在不需要更改偏好设置的情况下就能正常使用，而 `Edge` 和 `Safari` 对 `SameSite` 识别解析有一定问题，所以我们推荐使用 `Chrome`。
