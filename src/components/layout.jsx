@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMe } from "../service/user";
 import { UserContext } from "../lib/context";
+import useMessage from "antd/es/message/useMessage";
 
 export function BasicLayout({ children }) {
     return (
@@ -26,12 +27,14 @@ export function BasicLayout({ children }) {
 export function PrivateLayout({ children }) {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
+    const [messageApi, contextHolder] = useMessage();
 
     useEffect(() => {
         const checkLogin = async () => {
             let me = await getMe();
             if (!me) {
-                navigate("/login");
+                messageApi.error("无权访问当前页面，请先登录！", 0.6)
+                    .then(() => navigate("/login"));
             } else {
                 setUser(me);
             }
@@ -41,6 +44,7 @@ export function PrivateLayout({ children }) {
 
     return (
         <Layout className="basic-layout">
+            {contextHolder}
             <Header className="header"><NavBar user={user} /></Header>
             <Content>
                 <UserContext.Provider value={{ user, setUser }}>{user && children}</UserContext.Provider>

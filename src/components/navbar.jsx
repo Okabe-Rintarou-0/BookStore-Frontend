@@ -23,7 +23,8 @@ export default function NavBar({ user }) {
         { label: "购物车", value: "/cart" },
         { label: "订单", value: "/order" },
         { label: "排行", value: "/rank" },
-        { label: "后端 API 文档", value: "/api-docs" }
+        { label: "后端 API 文档", value: "/api-docs" },
+        { label: "课程", value: "/course" }
     ];
     const navMenuItems = navItems.map(item => ({
         key: item.value,
