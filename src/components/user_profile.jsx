@@ -145,7 +145,7 @@ export default function UserProfile() {
             <Card title="基础信息">
                 <Space direction="vertical" style={{ width: "100%" }}>
                     <span style={{ fontSize: 16, color: "#222222" }}>用户名：{user?.username}</span>
-                    <span style={{ fontSize: 16, color: "#222222" }}>余额：{user?.balance} 元</span>
+                    <span style={{ fontSize: 16, color: "#222222" }}>余额：{user?.balance / 100} 元</span>
                 </Space>
             </Card>
             <Card title="常用地址" extra={<Button type="primary" onClick={() => setShowModal(true)}>添加</Button>}>
