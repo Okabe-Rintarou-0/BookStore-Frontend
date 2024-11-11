@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/charts": "^2.2.1",
+    "@ant-design/charts": "^2.2.3",
     "@ant-design/pro-components": "^2.8.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
