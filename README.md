@@ -23,6 +23,8 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 各类文档 👉 [文档索引](./docs/README.md)，[课程要求](./public/requirements.pdf)
 
 ## ⚠️注意
+**请一定要做好版本管理，每一次小变更都可以用 git commit 保存。每一次大变更都可以 check 出一个新分支方便随时切换。**
+
 为了便于同学们专注开发前端，我们提供了后端服务。但是由于你们本地的前端（localhost）到我们的远程后端属于是跨站调用，这就会引发跨站传递 `Cookies` 的问题：[Cookie Samesite简析](https://zhuanlan.zhihu.com/p/266282015)。`Chrome` 浏览器在不需要更改偏好设置的情况下就能正常使用，而 `Edge` 和 `Safari` 对 `SameSite` 识别解析有一定问题，所以我们推荐使用 `Chrome`。
 
 > 部分浏览器不支持部分SameSite=none。IOS 12 的 Safari 以及老版本的一些 Chrome 会把 SameSite=none 识别成 SameSite=Strict，所以服务端必须在下发 Set-Cookie 响应头时进行 User-Agent 检测，对这些浏览器不下发 SameSite=none 属性。
@@ -255,6 +257,17 @@ React 使用 JSX 来定义组件，支持两种方式：类组件和函数式组
     {shouldShow && <SomeComponent/>}
     ```
     `shouldShow` 是一个 bool 类型的变量，当且仅当其为真，渲染后面的组件。这种写法最为简洁，也不失可读性。
+
++ 提取对象字段
+
+    ```javascript
+    const person = {"name": "Bob", "age": 12}
+    // 可以取别名
+    const {
+        name: nameAlias,
+        age
+    } = person;
+    ```
 
 + bool 类型的组件属性可以简写
     ```javascript
