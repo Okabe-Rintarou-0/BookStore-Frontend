@@ -113,6 +113,40 @@ return <Card title='案例1' extra={<Button onClick={mutate}>刷新</   Button>}
 
 你可以在“案例2”中体验两种写法的区别。这里我们使用的是一个公开的 api(https://dogapi.dog/docs/api-v2) 。
 
-当然，随着业务的发展，你可能还会有更多的需求，在这个 useData 上面新增更多的状态和配置。既然如此，**何必自己造轮子呢**？你完全可以用 `useSWR + axios` 这套方案，详见：useSWR 的官方文档：https://swr.vercel.app/zh-CN/docs/data-fetching ，此处不再赘述😁。 
+当然，随着业务的发展，你可能还会有更多的需求，在这个 useData 上面新增更多的状态和配置。既然如此，**何必自己造轮子呢**？你完全可以用 `useSWR + axios` 这套方案，详见：useSWR 的官方文档：https://swr.vercel.app/zh-CN/docs/data-fetching ，此处不再赘述😁。
+
+## 使用 useImmer 简化 state 更新
+
+安装：
+```shell
+yarn add immer use-immer
+```
+
+假设你有这样的一个类型的数据：
+
+```typescript
+interface TagType {
+    color: string;
+    text: string;
+}
+```
+
+你希望渲染出一堆 tags，并且按下按钮修改其中一个 tag 的 text，如果用原生的 `useState` 会这样写：
+
+```typescript
+const [tags, setTags] = useState<TagType[]>(generateTestTags());
+const modify = () => {
+    tags[randIndex].text = 'changed';
+    setTags([...tags]);
+};
+```
+
+由于 `useState` 监听的是一个数组（引用类型），所以浅拷贝是无法产生页面重渲染的，此处必须传递深拷贝，修改数组的地址，引发页面重渲染。然而，显而易见，这种方式一旦数组长度达到一定程度，性能开销将无法忽视。例如，在本案例中，我们渲染了 10000个标签。每次修改的时候，都会对这个大小为 10000 的数据进行深拷贝。
+
+而 `useImmer` 则允许我们直接修改数组/对象的字段，无需进行深拷贝，节省性能并提升代码可读性：
+
+```typescript
+setOptTags(tags => { tags[randIndex].text = 'changed' });
+```
 
 
