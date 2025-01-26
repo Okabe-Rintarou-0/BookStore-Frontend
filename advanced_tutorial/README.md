@@ -3,6 +3,8 @@
 适用对象：刚出新手村，渴望提升前端开发效率的学生。
 使用环境：yarn + React（使用`vite`创建）。
 
+在线 Playground：https://book-store-frontend-t7gb.vercel.app/
+
 启动教学项目：
 ```shell
 yarn run dev
