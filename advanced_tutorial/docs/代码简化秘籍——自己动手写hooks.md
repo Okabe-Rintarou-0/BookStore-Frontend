@@ -111,8 +111,8 @@ return <Card title='案例1' extra={<Button onClick={mutate}>刷新</   Button>}
 
 你还可以在此基础上添加一个 `mutate` 函数，当你进行一些数据修改，希望重新刷新数据的时候，可以调用这个暴露出来的 mutate 函数重新获取数据：
 
-你可以在“案例2”中体验两种写法的区别。这里我们使用的是一个公开的 api(https://dogapi.dog/docs/api-v2)。
+你可以在“案例2”中体验两种写法的区别。这里我们使用的是一个公开的 api(https://dogapi.dog/docs/api-v2) 。
 
-当然，随着业务的发展，你可能还会有更多的需求，在这个 useData 上面新增更多的状态和配置。既然如此，**何必自己造轮子呢**？你完全可以用 `useSWR + axios` 这套方案，详见：useSWR 的官方文档：https://swr.vercel.app/zh-CN/docs/data-fetching，此处不再赘述😁。 
+当然，随着业务的发展，你可能还会有更多的需求，在这个 useData 上面新增更多的状态和配置。既然如此，**何必自己造轮子呢**？你完全可以用 `useSWR + axios` 这套方案，详见：useSWR 的官方文档：https://swr.vercel.app/zh-CN/docs/data-fetching ，此处不再赘述😁。 
 
 
