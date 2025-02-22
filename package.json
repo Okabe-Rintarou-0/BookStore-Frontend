@@ -7,7 +7,7 @@
     "@ant-design/pro-components": "^2.8.6",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
-    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/user-event": "^14.6.1",
     "antd": "^5.24.0",
     "antd-img-crop": "^4.23.0",
     "react": "^18.2.0",
