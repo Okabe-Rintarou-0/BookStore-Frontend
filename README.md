@@ -93,14 +93,11 @@ yarn install && yarn start
 
 请确保进入 `package.json` 文件所在的目录后再执行上述命令。如果一切顺利，你会发现当前目录下生成了一个名为 `node_modules` 的目录，这里面是下载的第三方库（项目依赖）。启动后，你可以在 http://localhost:3000 访问前端。
 
-或者，使用 `Docker` 一键部署（仅测试用）：
-```bash
-docker run -itd -e REACT_APP_BASE_URL=后端服务器URL -p 3000:3000 --name bookstore-frontend 923048992/frontend
-```
-
-如果你使用的是 macOS，请使用 `923048992/frontend:mac` 镜像。
-
 如果你希望快速新建一个 `React` 项目，请参考：[create-react-app](https://create-react-app.dev/docs/getting-started) 或者 [vite](https://vitejs.dev/)。**我们更推荐大家使用后者**。
+
+## 部署指南
+
+https://private-user-images.githubusercontent.com/58595459/307246663-287189a8-0767-4014-81d4-9b555ca407d7.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDAyNzQ4MzMsIm5iZiI6MTc0MDI3NDUzMywicGF0aCI6Ii81ODU5NTQ1OS8zMDcyNDY2NjMtMjg3MTg5YTgtMDc2Ny00MDE0LTgxZDQtOWI1NTVjYTQwN2Q3Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjIzVDAxMzUzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQzMzQ3ZTU0NTMyODg2NWVlYWZlYTAyYzhkOTg2NWU4NDk3ZjA4OWM1YjdiZDk1MTFmYjc1NTQzYjA1Mjk3MDEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qtcn2m09u3tw28RX5Wqg_WFj1NWH0WP5oG6UlfxVhAw
 
 ## 后端 API
 
