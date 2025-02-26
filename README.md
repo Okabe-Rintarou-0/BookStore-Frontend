@@ -99,6 +99,8 @@ yarn run dev
 
 如果你希望快速新建一个 `React` 项目，请参考：[create-react-app](https://create-react-app.dev/docs/getting-started) 或者 [vite](https://vitejs.dev/)。**我们更推荐大家使用后者**。
 
+https://github.com/user-attachments/assets/8ea75f62-4a83-4a4c-8239-63d5ad0687ff
+
 ## 部署指南
 
 请在 `.env` 文件中填写我们提供的后端 URL。
