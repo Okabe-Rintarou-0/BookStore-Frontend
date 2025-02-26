@@ -41,25 +41,6 @@ UI 设计上，在不删减基本功能的前提下，保证尽可能的简洁�
 
 > 前端一词是指用户可以直接与之交互的图形用户界面（GUI），例如导航菜单、设计元素、按钮、图像和图表。采用技术术语，用户看到的带有多个 UI 组件的页面或屏幕称为文档对象模型（DOM）。—— [应用程序开发中的前端和后端之间有什么区别？](https://aws.amazon.com/cn/compare/the-difference-between-frontend-and-backend/)
 
-## 项目结构
-
-```
-├── ...
-├── Dockerfile          Docker 镜像构建文件
-├── package-lock.json   记录当前安装的 npm 包的确切版本
-├── package.json        包含项目的元数据和依赖项信息
-├── public              存放静态资源，如 HTML 文件、图片等
-└── src                 包含项目的源代码
-    ├── App.js          项目的根组件
-    ├── components      React 组件
-    ├── css             css 样式文件
-    ├── index.js        项目的入口文件
-    ├── lib             工具函数、工具类
-    ├── page            包含不同页面的组件，如首页、购物车页面
-    ├── service         后端交互的服务或 API 请求的代码
-    └── utils           通用的工具函数或帮助函数
-```
-
 ## IDE 选择
 
 一般而言开发前端没有什么“非它不可”的 IDE。我个人推荐 `vscode`（配合一些插件, 如 `EsLint`, `Es7+` 就已经可以很方便地开发了）。如果你对 `jetbrains` 公司的产品有执念，那么用 `webstorm` 之类的也可以。
