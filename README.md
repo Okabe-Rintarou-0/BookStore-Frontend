@@ -76,6 +76,10 @@ npm install && npm start
 
 # 使用 yarn
 yarn install && yarn start
+
+# 若使用 vite 则将上述 xxx start 切换成 run dev
+npm run dev
+yarn run dev
 ```
 
 对于 `npm` 下载速度慢的问题，可以考虑使用淘宝源、腾讯源或者 [SJTUG 镜像源](https://mirrors.sjtug.sjtu.edu.cn/docs/npm-registry)，具体换源命令请自行检索，推荐使用 `nrm` 工具管理源。
