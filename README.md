@@ -1,4 +1,8 @@
-# 电子书城前端
+<div align="center">
+  <img src="images/logo.png" width="300px"/>
+  <h1>Book Store Frontend</h1>
+  <p><b>A simple demo for learning React.</b></p>
+</div>
 
 该 repo 为上海交通大学课程“互联网应用开发技术(SE2321)” 的前端 demo 项目，供同学们学习参考。
 欢迎点亮✨，发表你的 issue 或 pr，为课程建设贡献一份力。如果你想参与问题、技术讨论，欢迎使用本 repo 的[讨论模块](https://github.com/Okabe-Rintarou-0/BookStore-Frontend/discussions)。
